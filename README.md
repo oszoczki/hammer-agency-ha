@@ -1,5 +1,7 @@
 # Híroldal Projekt
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/oszoczki/hammer-agency-ha)
+
 Egy egyszerű híroldal natív PHP és MySQL használatával.
 
 ## Technikai Döntések
