@@ -1,0 +1,27 @@
+RewriteEngine On
+
+# API endpoints
+RewriteRule ^api/news_create/?$ api/news_create.php [L]
+RewriteRule ^api/news_edit/?$ api/news_edit.php [L]
+RewriteRule ^api/news_delete/?$ api/news_delete.php [L]
+RewriteRule ^api/login/?$ api/login.php [L]
+RewriteRule ^api/logout/?$ api/logout.php [L]
+RewriteRule ^api/register/?$ api/register.php [L]
+
+# View endpoints
+RewriteRule ^login/?$ views/login.php [L]
+RewriteRule ^register/?$ views/register.php [L]
+RewriteRule ^news/create/?$ views/news_create.php [L]
+RewriteRule ^news/edit/([0-9]+)/?$ views/news_edit.php?id=$1 [L]
+RewriteRule ^news/([0-9]+)/?$ views/news.php?id=$1 [L]
+RewriteRule ^search/?$ views/search.php [QSA,L]
+
+# Default page
+RewriteRule ^$ views/home.php [L]
+
+# If the requested file or directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise, redirect to the default page
+RewriteRule ^(.*)$ views/home.php [L]
