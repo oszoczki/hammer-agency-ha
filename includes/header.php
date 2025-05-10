@@ -57,7 +57,7 @@ require_once __DIR__ . '/auth.php';
             </div>
         </div>
     </nav>
-    <div class="container mt-4">
+    <div class="container mt-4 mb-4">
         <?php if (isset($_SESSION['error'])): ?>
         <div class="alert alert-danger"><?php echo htmlspecialchars($_SESSION['error']); ?></div>
         <?php unset($_SESSION['error']); endif; ?>
