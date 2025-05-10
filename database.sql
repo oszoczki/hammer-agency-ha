@@ -11,8 +11,16 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS news (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    content TEXT NOT NULL,
-    author_id INT NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    intro_text TEXT NOT NULL,
+    full_text TEXT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
 ) ENGINE=InnoDB; 
+
+CREATE INDEX IF NOT EXISTS idx_news_title ON news(title);
+CREATE INDEX IF NOT EXISTS idx_news_created_at ON news(created_at);
+CREATE INDEX IF NOT EXISTS idx_users_username ON users(username);
