@@ -32,8 +32,8 @@ Egy egyszerű híroldal natív PHP és MySQL használatával.
 
 ## Telepítési Utasítások
 
-1. Futtasd a "php migrate.php" parancsot
-2. Állítsd be az adatbázis kapcsolatot a config/database.php fájlban
+1. Állítsd be az adatbázis kapcsolatot a config/database.php fájlban
+2. Futtasd a "php migrate.php" parancsot
 3. Érd el a weboldalt a webszerveren keresztül
 
 ## Funkciók
