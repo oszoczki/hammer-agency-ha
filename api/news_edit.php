@@ -25,10 +25,10 @@ try {
         exit;
     }
     
-    $title = $_POST['title'] ?? '';
-    $author = $_POST['author'] ?? '';
-    $intro_text = $_POST['intro_text'] ?? '';
-    $full_text = $_POST['full_text'] ?? '';
+    $title = trim($_POST['title'] ?? '');
+    $author = trim($_POST['author'] ?? '');
+    $intro_text = trim($_POST['intro_text'] ?? '');
+    $full_text = trim($_POST['full_text'] ?? '');
     
     if (empty($title) || empty($author) || empty($intro_text) || empty($full_text)) {
         $_SESSION['error'] = 'Hiányzó adatok';
